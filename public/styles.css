@@ -1,0 +1,123 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1b2838; /* Dark background for the body */
+    color: #fff; /* White text color for contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Scoreboard container styles */
+.scoreboard {
+    display: flex;
+    flex-direction: column; /* Stack teams vertically */
+    align-items: center;    /* Center align teams horizontally */
+    width: 90%;             /* Increased width for better appearance on large screens */
+    max-width: 1200px;      /* Maximum width for large screens */
+}
+
+/* Style for each team section */
+.team {
+    width: 100%;            /* Full width of the parent container */
+    max-width: 800px;       /* Maximum width for better appearance */
+    margin-bottom: 20px;    /* Space below each team section */
+    padding: 20px;          /* Padding inside each team section */
+    background-color: #161F26; /* Dark background color for teams */
+    border-radius: 10px;    /* Rounded corners */
+    border: 1px solid #1b2838; /* Border color matching the body */
+}
+
+/* Header styles */
+h2 {
+    text-align: center;
+    margin-bottom: 15px; /* Increased space below header */
+    font-size: 28px; /* Larger font size */
+}
+
+/* Table styles */
+table {
+    table-layout: fixed; /* Fix column widths */
+    width: 100%; /* Full width of the parent container */
+    border-collapse: separate; /* Ensure spacing works */
+    border-spacing: 0 5px; /* Horizontal and vertical spacing */
+}
+
+th:first-child,
+td:first-child {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 12px; /* Padding inside table cells */
+    text-align: center; /* Center align text */
+    border: 1px solid #444; /* Border color for cells */
+}
+
+/* Table header styles */
+th {
+    background-color: #bcbcbc; /* Darker background for headers */
+    color: #bcbcbc; /* White text for headers */
+}
+
+/* Style for player names */
+.player-name {
+    font-weight: bold;
+    color: #fff; /* Yellow color for player names */
+}
+
+/* Style for hero name */
+.hero-name {
+    color: #e67e22; /* Orange color for hero names */
+}
+
+/* Style for gold and stats */
+.lvl, .k, .d, .a {
+    color: #fff; /* White color for stats */
+}
+
+.gold {
+    color: #f1c40f;
+}
+
+.net_worth {
+    color: #f1c40f;
+}
+
+
+.team-name, .score {
+    font-family: 'Trojan Pro Bold', sans-serif;
+}
+
+td, th {
+    border: none; /* Remove borders */
+    padding: 12px; /* Keep padding for cell content spacing */
+    text-align: center; /* Center align text */
+    border-bottom: 1px solid #444; /* Border for bottom only */
+}
+
+/* Circle around level amount */
+.lvl-circle {
+    display: inline-block; /* Make the span respect the width and height */
+    width: 30px; /* Smaller width of the circle */
+    height: 30px; /* Smaller height of the circle */
+    border-radius: 50%; /* Makes the span a circle */
+    background-color: #060508; /* Background color of the circle */
+    color: #e1d2a5; /* Text color inside the circle */
+    text-align: center; /* Center align the text */
+    line-height: 30px; /* Center the text vertically */
+    font-size: 14px; /* Smaller font size for the level */
+    font-weight: bold; /* Bold text */
+    border: 2px solid #e1d2a5; /* Golden brown border color */
+}
+
+.lvl {
+    padding: 0; /* Remove padding if needed */
+    text-align: center; /* Center the content in the cell */
+}

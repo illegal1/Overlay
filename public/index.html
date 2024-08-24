@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 Scoreboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #1e1e1e; color: white; font-family: Arial, sans-serif; padding: 20px;">
+    <div class="scoreboard" style="display: flex; justify-content: space-between;">
+        <div class="team" id="radiant" style="flex: 1; margin: 0 10px;">
+            <div class="team-header" style="display: flex; align-items: center; margin-bottom: 10px;">
+                <span id="radiant-score" class="score" style="color: white; font-size: 28px; text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14; margin-right: 10px;">0</span>
+                <h2 class="team-name" style="color: white; text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14; font-size: 24px; margin: 0;">The Radiant</h2>
+            </div>
+            <table id="radiant-table" style="width: 100%; border-collapse: separate; color: white;">
+                <thead>
+                    <tr>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">Name</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">Gold</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">LVL</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">K</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">D</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">A</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">Net Worth</th>
+                    </tr>
+                </thead>
+                <tbody id="radiant-players">
+                    <!-- Radiant players will be listed here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="team" id="dire" style="flex: 1; margin: 0 10px;">
+            <div class="team-header" style="display: flex; align-items: center; margin-bottom: 10px;">
+                <span id="dire-score" class="score" style="color: white; font-size: 28px; text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000; margin-right: 10px;">0</span>
+                <h2 class="team-name" style="color: white; text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000; font-size: 24px; margin: 0;">The Dire</h2>
+            </div>
+            <table id="dire-table" style="width: 100%; border-collapse: separate; color: white;">
+                <thead>
+                    <tr>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">Name</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">Gold</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">LVL</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">K</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">D</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">A</th>
+                        <th style="border: none; padding: 8px; text-align: center; background-color: #5b5b5b;">Net Worth</th>
+                    </tr>
+                </thead>
+                <tbody id="dire-players">
+                    <!-- Dire players will be listed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
