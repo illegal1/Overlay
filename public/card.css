@@ -1,0 +1,52 @@
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+        body {
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Russo One', sans-serif;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #1040b9;
+            border: 2px solid #b9f823;
+            color: #e5f7e8;
+            padding: 15px;
+            border-radius: 10px;
+            width: 280px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(16, 64, 185, 0.7);
+            text-align: center;
+        }
+
+        /* Title Styling */
+        .card h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #b9f823;
+        }
+
+        /* Player Info Styling */
+        .player {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 1.1em;
+            padding: 8px;
+            background-color: #0b2a80;
+            border-radius: 5px;
+        }
+
+        .name {
+            font-weight: bold;
+            color: #e5f7e8;
+        }
+
+        .stat {
+            color: #b9f823;
+            font-weight: bold;
+        }

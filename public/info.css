@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    color: #ffffff;
+}
+
+.card {
+    background-color: #2e2e2e; /* Slightly lighter background for the card */
+    border-radius: 8px; /* Rounded corners */
+    padding: 5px; /* Increased padding */
+    width: 140px; /* Increased width for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
+    font-size: 14px; /* Larger font size */
+    position: absolute;
+    bottom: 0px; /* More space from the bottom */
+    right: 300px; /* More space from the right */
+    border: 1px solid #444; /* Border for better definition */
+}
+
+h2 {
+    font-size: 16px; /* Larger font size for heading */
+    text-align: center;
+    margin-bottom: 12px; /* Increased margin for spacing */
+    font-weight: bold; /* Bold heading */
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between; /* Aligns text to the left and right */
+    margin-bottom: 6px; /* Increased margin for better spacing */
+    padding: 2px 0; /* Padding for better readability */
+}
+
+.stat span {
+    display: inline-block;
+}
+
+.stat:not(.kda) {
+    border-bottom: 1px solid #555; /* Light border between stats */
+    padding-bottom: 4px; /* Padding for better spacing */
+}
+
+.kda span {
+    color: #ffcc00; /* Different color for K/D/A for emphasis */
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 180px; /* Smaller width for mobile devices */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 14px; /* Smaller font size for heading */
+        margin-bottom: 8px; /* Reduced margin */
+    }
+
+    .stat {
+        font-size: 12px; /* Smaller font size for stats */
+    }
+}
+
+
+
+
+
+/* XP Difference Box Styles */
+.xp-box {
+    position: absolute;
+    background-color: rgb(4, 116, 4);
+    color: rgb(0, 183, 255);
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: bold;
+
+    display: none; /* Hidden by default, shown dynamically */
+}
+
+/* Radiant leading, box on top left */
+.xp-box.radiant {
+    top: 60px;
+    left: 858px;
+}
+
+/* Dire leading, box on top right */
+.xp-box.dire {
+    top: 60px;
+    right: 858px;
+}
+
+.xp-arrow {
+    margin-right: 0px; /* Space between the arrow and text */
+    vertical-align: middle; /* Aligns the arrow vertically with the text */
+}

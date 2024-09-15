@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+}
+
+.overlay {
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.team-picks img, .team-bans img {
+    width: 138.5px;
+    height: 173.8px;
+    margin: 0 5.11px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.team-bans {
+    overflow: hidden;
+}
+
+.team-bans img {
+    width: 98.4px;
+    height: 53.8px;
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1); 
+}
+
+
+.picks-container {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between the picks */
+    gap: 10px; /* Adds space between the two team pick divs */
+    width: 100%;
+}
+
+.bans-container {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between the bans */
+    gap: 80px; /* Adds space between the two team bans divs */
+    margin-top: 20px; /* Adds some space between picks and bans */
+}
+
+.team-picks, .team-bans {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+
+

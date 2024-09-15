@@ -1,123 +1,141 @@
 /* General body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #1b2838; /* Dark background for the body */
-    color: #fff; /* White text color for contrast */
+    background-color: #1b2838;
+    color: #fff;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    /* Scale down everything on the page */
+    transform: scale(0.8); /* Adjust the scale factor as needed */
+    transform-origin: top left;
+    width: 125%; /* Adjust the width to counteract scaling issues */
+    height: 125%; /* Adjust the height to counteract scaling issues */
 }
 
-/* Scoreboard container styles */
 .scoreboard {
     display: flex;
-    flex-direction: column; /* Stack teams vertically */
-    align-items: center;    /* Center align teams horizontally */
-    width: 90%;             /* Increased width for better appearance on large screens */
-    max-width: 1200px;      /* Maximum width for large screens */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 1000px; /* Base width before scaling */
+    transform: scale(1.1); /* Increase this value to scale up */
+    transform-origin: top left; /* Ensure scaling originates from the top-left corner */
+    margin: 20px; /* Adjust margins if needed */
 }
+
+
+/* Scoreboard container styles */
+
 
 /* Style for each team section */
 .team {
-    width: 100%;            /* Full width of the parent container */
-    max-width: 800px;       /* Maximum width for better appearance */
-    margin-bottom: 20px;    /* Space below each team section */
-    padding: 20px;          /* Padding inside each team section */
-    background-color: #161F26; /* Dark background color for teams */
-    border-radius: 10px;    /* Rounded corners */
-    border: 1px solid #1b2838; /* Border color matching the body */
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #161F26;
+    border-radius: 10px;
+    border: 1px solid #1b2838;
 }
 
-/* Header styles */
-h2 {
-    text-align: center;
-    margin-bottom: 15px; /* Increased space below header */
-    font-size: 28px; /* Larger font size */
+/* Team header styles */
+.team-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.team-name, .score {
+    margin: 0;
+    color: white;
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+
+#dire .team-name, #dire .score {
+    text-shadow: 0 0 5px #ff0000, 0 0 30px #ff0000;
+}
+
+.score {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.team-name {
+    font-size: 24px;
 }
 
 /* Table styles */
 table {
-    table-layout: fixed; /* Fix column widths */
-    width: 100%; /* Full width of the parent container */
-    border-collapse: separate; /* Ensure spacing works */
-    border-spacing: 0 5px; /* Horizontal and vertical spacing */
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    color: white;
 }
 
-th:first-child,
-td:first-child {
+th:nth-child(2), td:nth-child(2) {
     width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
+
+th:first-child {
+   visibility: hidden;
+}
+
+
 th, td {
-    padding: 12px; /* Padding inside table cells */
-    text-align: center; /* Center align text */
-    border: 1px solid #444; /* Border color for cells */
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #444;
 }
 
-/* Table header styles */
 th {
-    background-color: #bcbcbc; /* Darker background for headers */
-    color: #bcbcbc; /* White text for headers */
+    background-color: #5b5b5b;
+    color: #bcbcbc;
+    padding: 3px;
 }
 
-/* Style for player names */
+/* Style for player and hero names */
 .player-name {
     font-weight: bold;
-    color: #fff; /* Yellow color for player names */
+    color: #fff;
 }
 
-/* Style for hero name */
 .hero-name {
-    color: #e67e22; /* Orange color for hero names */
+    color: #e67e22;
 }
 
 /* Style for gold and stats */
+.gold, .net_worth {
+    color: #f1c40f;
+}
+
 .lvl, .k, .d, .a {
-    color: #fff; /* White color for stats */
-}
-
-.gold {
-    color: #f1c40f;
-}
-
-.net_worth {
-    color: #f1c40f;
-}
-
-
-.team-name, .score {
-    font-family: 'Trojan Pro Bold', sans-serif;
-}
-
-td, th {
-    border: none; /* Remove borders */
-    padding: 12px; /* Keep padding for cell content spacing */
-    text-align: center; /* Center align text */
-    border-bottom: 1px solid #444; /* Border for bottom only */
+    color: #fff;
 }
 
 /* Circle around level amount */
 .lvl-circle {
-    display: inline-block; /* Make the span respect the width and height */
-    width: 30px; /* Smaller width of the circle */
-    height: 30px; /* Smaller height of the circle */
-    border-radius: 50%; /* Makes the span a circle */
-    background-color: #060508; /* Background color of the circle */
-    color: #e1d2a5; /* Text color inside the circle */
-    text-align: center; /* Center align the text */
-    line-height: 30px; /* Center the text vertically */
-    font-size: 14px; /* Smaller font size for the level */
-    font-weight: bold; /* Bold text */
-    border: 2px solid #e1d2a5; /* Golden brown border color */
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #060508;
+    color: #e1d2a5;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #e1d2a5;
 }
 
 .lvl {
-    padding: 0; /* Remove padding if needed */
-    text-align: center; /* Center the content in the cell */
+    padding: 0;
+    text-align: center;
 }
+
