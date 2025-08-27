@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       towerDamage.textContent = `Tower Damage: ${player.tower_damage}`;
       heroDamage.textContent = `Hero Damage: ${player.hero_damage}`;
       healing.textContent = `Healing: ${player.hero_healing}`;
-      playerImage.src = `players/${player.name}.png`;
+      playerImage.src = `players/${player.name.toLowerCase()}.png`;
     } else {
       // Handle case when no player is selected
       playerName.textContent = "No player selected";
