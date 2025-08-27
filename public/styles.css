@@ -1,141 +1,162 @@
 /* General body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1b2838;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Scale down everything on the page */
-    transform: scale(0.8); /* Adjust the scale factor as needed */
-    transform-origin: top left;
-    width: 125%; /* Adjust the width to counteract scaling issues */
-    height: 125%; /* Adjust the height to counteract scaling issues */
+  font-family: Arial, sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8); /* Adjust the scale factor as needed */
+  transform-origin: top left;
+  width: 125%; /* Adjust the width to counteract scaling issues */
+  height: 125%; /* Adjust the height to counteract scaling issues */
+  background: none; /* Remove any background color */
 }
-
-.scoreboard {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 1000px; /* Base width before scaling */
-    transform: scale(1.1); /* Increase this value to scale up */
-    transform-origin: top left; /* Ensure scaling originates from the top-left corner */
-    margin: 20px; /* Adjust margins if needed */
-}
-
 
 /* Scoreboard container styles */
-
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1000px; /* Base width before scaling */
+  transform: scale(1.1); /* Increase this value to scale up */
+  transform-origin: top left; /* Ensure scaling originates from the top-left corner */
+  margin: 10px; /* Adjust margins if needed */
+  background: none; /* Remove the scoreboard background */
+}
 
 /* Style for each team section */
 .team {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #161F26;
-    border-radius: 10px;
-    border: 1px solid #1b2838;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 8px; /* Reduced margin */
+  padding: 8px; /* Reduced padding */
+  background-color: rgba(
+    22,
+    31,
+    38,
+    0.9
+  ); /* Slightly transparent background for the team sections */
+  border-radius: 6px;
+  border: 1px solid #1b2838;
 }
 
 /* Team header styles */
 .team-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px; /* Reduced margin */
 }
 
-.team-name, .score {
-    margin: 0;
-    color: white;
-    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-}
-
-#dire .team-name, #dire .score {
-    text-shadow: 0 0 5px #ff0000, 0 0 30px #ff0000;
-}
-
+.team-name,
 .score {
-    font-size: 28px;
-    margin-right: 10px;
+  margin: 0;
+  color: white;
 }
 
 .team-name {
-    font-size: 24px;
+  font-size: 16px; /* Smaller font */
+}
+
+.score {
+  font-size: 20px; /* Smaller font */
+  margin-right: 6px;
+}
+
+/* Special styles for Dire team */
+#dire .team-name,
+#dire .score {
+  text-shadow: 0 0 4px #ff0000, 0 0 20px #ff0000;
+}
+
+/* Special styles for Radiant team */
+#radiant .team-name,
+#radiant .score {
+  text-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14;
 }
 
 /* Table styles */
 table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 5px;
-    color: white;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 3px; /* Reduced spacing between rows */
+  color: white;
 }
 
-th:nth-child(2), td:nth-child(2) {
-    width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+th:nth-child(2),
+td:nth-child(2) {
+  width: 180px; /* Adjusted width */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
 
 th:first-child {
-   visibility: hidden;
+  visibility: hidden;
 }
 
-
-th, td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #444;
+th,
+td {
+  padding: 4px; /* Reduced padding */
+  text-align: center;
+  border-bottom: 1px solid #444;
 }
 
 th {
-    background-color: #5b5b5b;
-    color: #bcbcbc;
-    padding: 3px;
+  background-color: #5b5b5b;
+  color: #bcbcbc;
+  padding: 2px; /* Reduced padding for headers */
+  font-size: 12px; /* Smaller font for headers */
 }
 
 /* Style for player and hero names */
 .player-name {
-    font-weight: bold;
-    color: #fff;
+  font-weight: bold;
+  color: #fff;
+  font-size: 12px; /* Smaller font */
 }
 
 .hero-name {
-    color: #e67e22;
+  color: #e67e22;
+  font-size: 12px; /* Smaller font */
 }
 
 /* Style for gold and stats */
-.gold, .net_worth {
-    color: #f1c40f;
+.gold,
+.net_worth {
+  color: #f1c40f;
+  font-size: 12px; /* Smaller font */
 }
 
-.lvl, .k, .d, .a {
-    color: #fff;
+.lvl,
+.k,
+.d,
+.a {
+  color: #fff;
+  font-size: 12px; /* Smaller font */
 }
 
 /* Circle around level amount */
 .lvl-circle {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #060508;
-    color: #e1d2a5;
-    text-align: center;
-    line-height: 30px;
-    font-size: 14px;
-    font-weight: bold;
-    border: 2px solid #e1d2a5;
+  display: inline-block;
+  width: 20px; /* Smaller circle */
+  height: 20px; /* Smaller circle */
+  border-radius: 50%;
+  background-color: #060508;
+  color: #e1d2a5;
+  text-align: center;
+  line-height: 20px; /* Adjusted for smaller circle */
+  font-size: 10px; /* Smaller font */
+  font-weight: bold;
+  border: 1px solid #e1d2a5; /* Thinner border */
 }
 
-.lvl {
-    padding: 0;
-    text-align: center;
+/* Smaller hero images */
+.hero-image {
+  width: 40px; /* Reduced width */
+  height: 40px; /* Reduced height */
+  border-radius: 4px; /* Optional: rounded corners */
+  object-fit: cover; /* Ensure the image fits properly */
 }
-

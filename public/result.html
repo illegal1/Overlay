@@ -1,124 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dota 2 Series Results</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e; /* Dark background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #f0f0f0; /* Light text color for readability */
-        }
-        .container {
-            display: flex;
-            gap: 20px;
-        }
-        .team {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .team-title {
-            margin-bottom: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #e0e0e0; /* Slightly lighter text for better contrast */
-        }
-        .win-bar {
-            display: flex;
-            flex-direction: row;
-            gap: 2px;
-            align-items: flex-end; /* Align rectangles to the bottom */
-            margin-bottom: 20px;
-        }
-        .win-rectangle {
-            width: 10px;
-            height: 20px;
-            border: 2px solid #a67f32;
-            border-radius: 3px;
-            background-color: transparent;
-        }
-        .filled {
-            background-color: #e8b551;
-        }
+      body {
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        background-color: transparent; /* Make the background transparent */
+        font-family: Arial, sans-serif;
+        color: #f0f0f0; /* Light text color for readability */
+      }
+      .container {
+        display: flex;
+        gap: 40px; /* Adjust gap between teams */
+        justify-content: center; /* Center the teams horizontally */
+        align-items: center; /* Center the teams vertically */
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+        height: 100%; /* Ensure it fits the iframe height */
+        margin-top: 20px;
+      }
+      .team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+      }
+      .team-title {
+        margin-bottom: 5px; /* Reduce spacing for compact layout */
+        font-size: 14px; /* Adjust font size */
+        font-weight: bold;
+        color: #e0e0e0; /* Slightly lighter text for better contrast */
+      }
+      .win-bar {
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+        align-items: flex-end; /* Align rectangles to the bottom */
+      }
+      .win-rectangle {
+        width: 10px;
+        height: 20px;
+        border: 2px solid #a67f32;
+        border-radius: 3px;
+        background-color: transparent;
+      }
+      .filled {
+        background-color: #e8b551;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="teamContainer" class="container"></div>
 
     <script>
-        const apiUrl = '/game-data'; // Replace with your API URL
+      const apiUrl = "/game-data"; // Replace with your API URL
 
-        function fetchData() {
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    updateUI(data);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                });
-        }
+      function fetchData() {
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            updateUI(data);
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      }
 
-        function updateUI(gameData) {
-            const teamContainer = document.getElementById('teamContainer');
-            teamContainer.innerHTML = ''; // Clear existing content
+      function updateUI(gameData) {
+        const teamContainer = document.getElementById("teamContainer");
+        teamContainer.innerHTML = ""; // Clear existing content
 
-            const teams = ['radiant', 'dire'];
-            const maxSeries = getMaxSeries(gameData.league.series_type);
+        const teams = ["radiant", "dire"];
+        const maxSeries = getMaxSeries(gameData.league.series_type);
 
-            teams.forEach(team => {
-                const seriesWins = gameData[team].series_wins;
+        teams.forEach((team) => {
+          const seriesWins = gameData[team].series_wins;
 
-                // Create rectangles
-                const rectangles = [];
-                for (let i = 0; i < maxSeries; i++) {
-                    const rectangle = document.createElement('div');
-                    rectangle.className = 'win-rectangle';
-                    if (i < seriesWins) {
-                        rectangle.classList.add('filled');
-                    }
-                    rectangles.push(rectangle);
-                }
+          // Create rectangles
+          const rectangles = [];
+          for (let i = 0; i < maxSeries; i++) {
+            const rectangle = document.createElement("div");
+            rectangle.className = "win-rectangle";
+            if (i < seriesWins) {
+              rectangle.classList.add("filled");
+            }
+            rectangles.push(rectangle);
+          }
 
-                // Create team div
-                const teamDiv = document.createElement('div');
-                teamDiv.className = 'team';
-                
-                // Add team title
-                const title = document.createElement('div');
-                title.className = 'team-title';
-                title.innerText = team.charAt(0).toUpperCase() + team.slice(1);
-                teamDiv.appendChild(title);
+          // Create team div
+          const teamDiv = document.createElement("div");
+          teamDiv.className = "team";
 
-                // Add rectangles to win bar
-                const winBar = document.createElement('div');
-                winBar.className = 'win-bar';
-                rectangles.forEach(rectangle => winBar.appendChild(rectangle));
+          // Add team title
+          const title = document.createElement("div");
+          title.className = "team-title";
 
-                teamDiv.appendChild(winBar);
-                teamContainer.appendChild(teamDiv);
-            });
-        }
+          teamDiv.appendChild(title);
 
-        // Function to get max series based on series type
-        function getMaxSeries(seriesType) {
-            if (seriesType === 'bo2') return 1;
-            if (seriesType === 'bo3') return 2;
-            if (seriesType === 'bo5') return 3;
-            return 0; // default case, can be adjusted
-        }
+          // Add rectangles to win bar
+          const winBar = document.createElement("div");
+          winBar.className = "win-bar";
+          rectangles.forEach((rectangle) => winBar.appendChild(rectangle));
 
-        // Initial data fetch
-        fetchData();
-        // Fetch data every 10 seconds
-        setInterval(fetchData, 10000);
+          teamDiv.appendChild(winBar);
+          teamContainer.appendChild(teamDiv);
+        });
+      }
+
+      // Function to get max series based on series type
+      function getMaxSeries(seriesType) {
+        if (seriesType === "bo2") return 1;
+        if (seriesType === "bo3") return 2;
+        if (seriesType === "bo5") return 3;
+        return 0; // default case, can be adjusted
+      }
+
+      // Initial data fetch
+      fetchData();
+      // Fetch data every 10 seconds
+      setInterval(fetchData, 10000);
     </script>
-</body>
+  </body>
 </html>

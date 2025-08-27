@@ -1,61 +1,108 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #1e1e1e;
-    font-family: Arial, sans-serif;
+/* --- 1. General Body & Font Setup --- */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
 }
 
+/* --- 2. Main Overlay for Centering --- */
 .overlay {
-    height: 150vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-
-.team-picks img, .team-bans img {
-    width: 138.5px;
-    height: 173.8px;
-    margin: 0 5.11px;
-    overflow: hidden;
-    background-color: #333;
-}
-
-.team-bans {
-    overflow: hidden;
-}
-
-.team-bans img {
-    width: 98.4px;
-    height: 53.8px;
-    filter: gray;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1); 
-}
-
-
-.picks-container {
-    display: flex;
-    justify-content: space-between; /* Adjust spacing between the picks */
-    gap: 10px; /* Adds space between the two team pick divs */
-    width: 100%;
+/* --- 3. Row Containers (Picks & Bans) --- */
+.picks-container,
+.bans-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  gap: 20px;
 }
 
 .bans-container {
-    display: flex;
-    justify-content: space-between; /* Adjust spacing between the bans */
-    gap: 80px; /* Adds space between the two team bans divs */
-    margin-top: 20px; /* Adds some space between picks and bans */
+  margin-top: 20px;
 }
 
-.team-picks, .team-bans {
-    display: flex;
-    justify-content: space-around;
+/* --- 4. Team Hero Containers --- */
+.team-picks,
+.team-bans {
+  display: flex;
+  justify-content: center; /* ✅ This groups the images in the middle */
+  width: 720px;
+  gap: 10px; /* ✅ This adds a 10px gap between each image */
 }
 
+/* --- 5. Hero Image Styling --- */
+.team-picks img,
+.team-bans img {
+  background-color: #333;
+  object-fit: cover;
+  border-radius: 4px;
+  /* No border property */
+}
 
+/* Specific size for PICKED heroes */
+.team-picks img {
+  width: 138.5px;
+  height: 173.8px;
+}
 
+/* Specific size and filter for BANNED heroes */
+.team-bans img {
+  width: 98.4px;
+  height: 55.35px; /* Perfect 16:9 height for this width */
+  filter: grayscale(100%);
+  opacity: 0.7;
+  object-fit: cover; /* Cover will now work correctly */
+}
 
+/* --- 6. Central Logos, Text & Timer --- */
+.team-logos-container {
+  display: flex;
+  flex-direction: column; /* Stack logos-wrapper and iframe vertically */
+  align-items: center;
+  justify-content: center;
+}
 
+.logos-wrapper {
+  display: flex; /* Keep the logos and VS text aligned horizontally */
+  align-items: center;
+  justify-content: center;
+}
 
+.team-logos-container img {
+  max-width: 60px;
+  margin: 0 15px;
+}
+
+.team-logos-container .vs-text {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.result-frame {
+  width: 140px; /* Adjust width to fit the teamContainer content */
+  height: 60px; /* Adjust height to fit the teamContainer content */
+  border: none; /* Removes default iframe border */
+  margin-top: 10px; /* Adds spacing below the logos */
+  overflow: hidden; /* Ensures no extra content is shown */
+}
+
+#reserve-time {
+  margin-left: 80px;
+  margin-right: 70px;
+}
