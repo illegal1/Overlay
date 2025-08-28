@@ -120,7 +120,7 @@ const createPlayerRow = (player) => {
 
   row.innerHTML = `
 	<td><img src="${getHeroImageUrl(
-    player.hero_name
+    player.hero_npc_name
   )}" class="img-fluid rounded-start" alt="${getHeroName(
     player.hero_name
   )}" style="width: 150px;"></td>
@@ -180,7 +180,7 @@ const createPlayerCard = (player) => {
             <div class="row g-0">
                 <div class="col-md-3">
                     <img src="${getHeroImageUrl(
-                      player.hero_name
+                      player.hero_npc_name
                     )}" class="img-fluid rounded-start" alt="${getHeroName(
     player.hero_name
   )}">
