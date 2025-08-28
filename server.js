@@ -133,6 +133,7 @@ const Dota2GSI = require("dota2-gsi");
 const path = require("path");
 const axios = require("axios");
 const NodeCache = require("node-cache"); // Import node-cache
+const cors = require(cors);
 
 const app = express();
 const port = 3000;
